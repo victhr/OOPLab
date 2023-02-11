@@ -1,5 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using OOPLab.Asynchronous;
 using OOPLab.Delegates;
+using OOPLab.LINQ;
 using OOPLab.OOP;
 using OOPLab.ServiceImplementation;
 using static OOPLab.Delegates.MulticastingDelegate;
@@ -86,3 +88,96 @@ Console.WriteLine("Area & Perimeter Exec 2");
 rectdelegate -= multicast.area;
 
 rectdelegate.Invoke(10.1, 23.0);
+
+Console.WriteLine("================Predicate Delegate=======================");
+
+PredicateDelegate.my_delegate obj_predicate = PredicateDelegate.myfun;
+Console.WriteLine(obj_predicate("Hello"));
+
+Predicate<string> val = PredicateDelegate.myfun;
+Console.WriteLine(val("Hello world!!!!!!!!"));
+
+Console.WriteLine("================Predicate Delegate Anonymous=======================");
+
+Predicate<string> val1 = delegate (string mystring)
+{
+    if (mystring.Length < 10)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+};
+
+Console.WriteLine( val1("Hola"));
+Console.WriteLine(val1("Hola mundo como estas"));
+
+Console.WriteLine("================Predicate Delegate Lambda Expression=======================");
+
+Predicate<string> val2 = mystring => mystring.Equals("Hello");
+Console.WriteLine(val2("Hello"));
+Console.WriteLine(val2("Hello world"));
+
+Console.WriteLine("================Action Delegate=======================");
+Action<int, int> funcVal = ActionDelegate.Sub;
+funcVal(10, 7);
+
+Console.WriteLine("================Action Delegate Anonymous=======================");
+
+Action<int, int> ActionAn_val = delegate (int x, int y)
+{
+    Console.WriteLine(x - y);
+};
+
+ActionAn_val(12,7);
+
+Console.WriteLine("================Action Delegate Lambda=======================");
+Action<string> ActionLanbdastr = str => Console.WriteLine(str);
+ActionLanbdastr("hello");
+
+Console.WriteLine("================Func Delegate=======================");
+Func<int, int, int, int, int> funcDelegate = FuncDelegate.MultiplyMethod;
+Console.WriteLine(funcDelegate(5,100,23,4));
+
+Console.WriteLine("================Func Delegate Anonymous=======================");
+Func<int, int, int, int> FuncAnonymousDelegate = delegate (int x, int y, int z)
+{
+    return x * y * z;
+};
+
+Console.WriteLine(FuncAnonymousDelegate(23, 122, 90));
+
+
+Console.WriteLine("================Func Delegate Lambda=======================");
+
+Func<int, int, int, int> FuncLambdaDelegate = (int x, int y, int z) => x * y * z;
+Console.WriteLine(FuncLambdaDelegate(23, 23, 1));
+
+
+Console.WriteLine("================LINQ=======================");
+
+GetData getData = new GetData();
+
+Console.WriteLine("================LINQ Query Syntax======================="); 
+
+getData.QueryExtraction(PopulationFake.FillEmployee1(), PopulationFake.FillEmployee2()).ForEach(item =>
+{
+    Console.WriteLine("Emp In = {0}, Emp Name {1}, Emp Salary = {2}", item.Emp_id, item.Emp_name, item.Emp_Salary);
+});
+
+Console.WriteLine("================LINQ Method Syntax=======================");
+
+getData.MethodExtraction(PopulationFake.FillEmployee1(), PopulationFake.FillEmployee2()).ForEach(item =>
+{
+    Console.WriteLine("Emp In = {0}, Emp Name {1}, Emp Depatment = {2}", item.Emp_id, item.Emp_name, item.Emp_dept);
+});
+
+Console.WriteLine("================Sync=======================");
+
+SynchronousTest.SynDemo();
+
+Console.WriteLine("================Async=======================");
+
+Asynchronous.SynDemo();

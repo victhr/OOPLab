@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOPLab", "OOPLab\OOPLab.csproj", "{5718CF44-44F2-49B0-B3A2-E9A12A7C1BF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OOPLab", "OOPLab\OOPLab.csproj", "{5718CF44-44F2-49B0-B3A2-E9A12A7C1BF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCLab", "MVCLab\MVCLab.csproj", "{136924B5-AA35-4B6C-B62A-4F1679C039A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{5718CF44-44F2-49B0-B3A2-E9A12A7C1BF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5718CF44-44F2-49B0-B3A2-E9A12A7C1BF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5718CF44-44F2-49B0-B3A2-E9A12A7C1BF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{136924B5-AA35-4B6C-B62A-4F1679C039A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{136924B5-AA35-4B6C-B62A-4F1679C039A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{136924B5-AA35-4B6C-B62A-4F1679C039A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{136924B5-AA35-4B6C-B62A-4F1679C039A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
