@@ -1,13 +1,14 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
 }
-
 
 <div>
     @{
-        var employee = ViewData["Employee"] as MVCLab.Models.EmployeeModel;
+        var employee = ViewBag.Employee;
     }
-    <h2>@ViewData["Header"]</h2>
+    <h2>@ViewBag.Header</h2>
     <table style="font-family:Arial">
         <tr>
             <td> Employee Id:</td>
@@ -34,10 +35,4 @@
             <td>@employee.Address</td>
         </tr>
     </table>
-</div>
-
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>

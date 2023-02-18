@@ -1,7 +1,12 @@
+using MVCLab.Filters;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+//Global Filter Exception
+builder.Services.AddControllersWithViews(config => config.Filters.Add(typeof(CustomExceptionFilter)));
 
 var app = builder.Build();
 
